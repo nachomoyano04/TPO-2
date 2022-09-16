@@ -46,7 +46,7 @@
       <Fields>
         <Field name="marca" type="String" visibility="protected"/>
         <Field name="patente" type="String" visibility="protected"/>
-        <Field name="combustible" type="Combustible" visibility="protected"/>
+        <Field name="combustible" type="tipoCombustible" visibility="protected"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
@@ -131,11 +131,11 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <IsRelation name="is" source="Camion" target="Vehiculo"/>
     <UseRelation name="Usa " source="Vehiculo" target="Combustible" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Esta compuesto por" source="Viaje" target="Ciudad" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Camioneta" target="Vehiculo"/>
     <HasRelation name="Esta compuesto por" source="Viaje" target="Vehiculo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="Auto" target="Vehiculo"/>
-    <IsRelation name="is" source="Camioneta" target="Vehiculo"/>
-    <IsRelation name="is" source="Camion" target="Vehiculo"/>
-    <HasRelation name="Esta compuesto por" source="Viaje" target="Ciudad" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
   </ClassDiagramRelations>
 </ClassDiagram>

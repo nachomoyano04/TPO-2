@@ -2,7 +2,7 @@ package Clases;
 
 public class Combustible {
  
-    String tipo;
+    tipoCombustible tipo;
     double precio; 
 
     @Override
@@ -10,11 +10,11 @@ public class Combustible {
         return "Combustible{" + "tipo=" + tipo + ", precio=" + precio + '}';
     }
 
-    public String getTipo() {
+    public tipoCombustible getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(tipoCombustible tipo) {
         this.tipo = tipo;
     }
 
@@ -26,7 +26,7 @@ public class Combustible {
         this.precio = precio;
     }
 
-    public Combustible(String tipo, double precio) {
+    public Combustible(tipoCombustible tipo, double precio) {
         this.tipo = tipo;
         this.precio = precio;
     }
