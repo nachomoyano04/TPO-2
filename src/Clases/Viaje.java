@@ -70,10 +70,24 @@ public class Viaje {
         this.estanSobreMismaRuta = estanSobreMismaRuta;
     }
 
-    @Override
+   @Override
     public String toString() {
         return "El Viaje{" + "ciudadOrigen=" + ciudadOrigen + ", ciudadDestino=" + ciudadDestino + ", distancia=" + distancia + ", vehiculo=" + vehiculo + ", cantPeajes=" + cantPeajes + ", estanSobreMismaRuta=" + estanSobreMismaRuta + '}';
     }
     
+    public double calcularDistancia(){
+        return 0;
+    } 
+     public double calcularCostoPeaje(){
+        return 0;
+    } 
     
+     public Combustible calcularCostoCombustible(){
+        return ;
+        
+    } 
+      public double calcularCostoTotal(){
+        return 0;
+    } 
  }
+
