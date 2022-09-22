@@ -9,10 +9,12 @@ public class Camioneta extends Vehiculo {
         super(marca, patente, combustible);
     }
 
+    @Override
     public double calcularCostoCombustible(){
         // 10lts por cada 100km
-        
-        return 100;
+         double costoDeCombustible;
+        costoDeCombustible=combustible.getPrecio()*10/100;
+        return costoDeCombustible;
     };
     
 }

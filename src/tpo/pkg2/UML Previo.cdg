@@ -31,7 +31,7 @@
         <Method name="setters" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Auto" package="" visibility="public" xPosition="1084.0" yPosition="453.0">
+    <Class name="Auto" package="" visibility="public" xPosition="1104.0" yPosition="436.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -46,7 +46,7 @@
       <Fields>
         <Field name="marca" type="String" visibility="protected"/>
         <Field name="patente" type="String" visibility="protected"/>
-        <Field name="combustible" type="tipoCombustible" visibility="protected"/>
+        <Field name="combustible" type="Combustible" visibility="protected"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
@@ -62,7 +62,7 @@
         <Method name="getters" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Camioneta" package="" visibility="public" xPosition="495.0" yPosition="441.0">
+    <Class name="Camioneta" package="" visibility="public" xPosition="495.0" yPosition="409.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -73,7 +73,7 @@
         <Method name="setters" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Camion" package="" visibility="public" xPosition="798.0" yPosition="453.0">
+    <Class name="Camion" package="" visibility="public" xPosition="798.0" yPosition="409.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -120,7 +120,7 @@
         <Method name="setters" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="TPO2" package="" visibility="public" xPosition="1104.0" yPosition="319.0">
+    <Class name="TPO2" package="" visibility="public" xPosition="1104.0" yPosition="307.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -131,11 +131,11 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <IsRelation name="is" source="Camion" target="Vehiculo"/>
-    <UseRelation name="Usa " source="Vehiculo" target="Combustible" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="Esta compuesto por" source="Viaje" target="Ciudad" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <IsRelation name="is" source="Camioneta" target="Vehiculo"/>
     <HasRelation name="Esta compuesto por" source="Viaje" target="Vehiculo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="Auto" target="Vehiculo"/>
+    <UseRelation name="Usa " source="Vehiculo" target="Combustible" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Camion" target="Vehiculo"/>
+    <IsRelation name="is" source="Camioneta" target="Vehiculo"/>
   </ClassDiagramRelations>
 </ClassDiagram>
