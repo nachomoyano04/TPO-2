@@ -9,7 +9,10 @@ public class Camioneta extends Vehiculo {
         super(marca, patente, combustible);
     }
 
-    @Override
+    public Camioneta() {
+    }
+
+    
     public double calcularCostoCombustible(){
         // 10lts por cada 100km
          double costoDeCombustible;

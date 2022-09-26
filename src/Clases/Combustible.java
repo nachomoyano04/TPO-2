@@ -5,6 +5,12 @@ public class Combustible {
     tipoCombustible tipo;
     double precio; 
 
+    public Combustible(tipoCombustible tipo, double precio) {
+        this.tipo = tipo;
+        this.precio = precio;
+    }
+    
+    
     @Override
     public String toString() {
         return "Combustible{" + "tipo=" + tipo + ", precio=" + precio + '}';
