@@ -3,7 +3,7 @@ package Clases.Vehiculos;
 public class Camion extends Vehiculo{
     
     
-        @Override
+
     public double calcularCostoCombustible(){
         double costoDeCombustible;
         costoDeCombustible=combustible.getPrecio()*12/100;

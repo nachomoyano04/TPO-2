@@ -41,11 +41,23 @@ La clase viaje poseerá al menos 2 constructores, y los siguientes métodos:
 
 package tpo.pkg2;
 
+import Clases.Ciudad;
+import Clases.Combustible;
+import Clases.Vehiculos.Auto;
+import Clases.Viaje;
+import Clases.tipoCombustible;
+
 
 public class TPO2 {
 
 
     public static void main(String[] args) {
+      Combustible com = new Combustible(tipoCombustible.NAFTA);
+      Auto a = new Auto();
+      Ciudad villa = new Ciudad(500, "siete", "Villa Mercedes");
+      Ciudad sanluis = new Ciudad(400, "siete", "San Luis");
+      Viaje trip = new Viaje(villa,sanluis, a, com, 123, true);
+      System.out.print(trip.calcularCostoTotal());
       
     }
     

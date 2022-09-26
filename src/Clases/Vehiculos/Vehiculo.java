@@ -5,7 +5,7 @@ import Clases.Combustible;
 public abstract class Vehiculo {
     
     protected String marca,patente;
-    protected Combustible combustible;
+    protected Combustible combustible = new Combustible();
          
     public Vehiculo(String marca, String patente, Combustible combustible) {
         this.marca = marca;
@@ -15,9 +15,30 @@ public abstract class Vehiculo {
 
     public Vehiculo() {
     }
-        
-    public double calcularCostoCombustible(){
-        return 0;
-    };
-    
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+
+    public Combustible getCombustible() {
+        return combustible;
+    }
+
+    public void setCombustible(Combustible combustible) {
+        this.combustible = combustible;
+    }
+      
+    public abstract double calcularCostoCombustible();
 }
