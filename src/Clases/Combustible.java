@@ -35,15 +35,20 @@ public class Combustible {
         this.tipo = tipo;
         switch (tipo) {
             case DIESEL:
-                precio = 165;break;
+                precio = 165;
+                break;
             case GASOIL:
-                precio = 135;break;
+                precio = 135;
+                break;
             case GNC:
-                precio = 71;break;
+                precio = 71;
+                break;
             case NAFTA:
-                precio = 130;break;
+                precio = 130;
+                break;
             case BIODIESEL:
-                precio = 180;break;
+                precio = 180;
+                break;
         }
     }
 

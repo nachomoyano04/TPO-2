@@ -48,16 +48,16 @@ import Clases.tipoCombustible;
 public class TPO2 {
 
     public static void main(String[] args) {
-        
+
         System.out.println("Viaje desde Villa Mercedes hasta San Luis (Por misma ruta redondeando 100km total)");
-        
+
         Combustible com = new Combustible(tipoCombustible.NAFTA);
-        Auto a = new Auto("Ford focus","HIJ245",com);
+        Auto a = new Auto("Ford focus", "HIJ245", com);
         Ciudad villa = new Ciudad(500, "siete", "Villa Mercedes");
         Ciudad sanluis = new Ciudad(400, "siete", "San Luis");
         Viaje trip = new Viaje(villa, sanluis, a, com, 3, true);
         System.out.println(trip);
-        System.out.println("Costo total de viaje en auto, tipo de combustible nafta: $"+trip.calcularCostoTotal());
+        System.out.println("Costo total de viaje en auto, tipo de combustible nafta: $" + trip.calcularCostoTotal());
 
     }
 
