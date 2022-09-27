@@ -12,7 +12,7 @@ public class Combustible {
 
     @Override
     public String toString() {
-        return "Combustible{" + "tipo=" + tipo + ", precio=" + precio + '}';
+        return "Tipo: " + tipo + ", precio: " + precio + '.';
     }
 
     public tipoCombustible getTipo() {
@@ -48,6 +48,10 @@ public class Combustible {
                 break;
             case BIODIESEL:
                 precio = 180;
+                break;
+            default:
+                System.out.println("Opcion incorrecta de combustible, se setea precio de Gasoil por defecto");
+                precio = 135;
                 break;
         }
     }

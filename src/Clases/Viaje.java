@@ -1,9 +1,8 @@
 package Clases;
 
-import Clases.Vehiculos.Auto;
 import Clases.Vehiculos.Camion;
-import Clases.Vehiculos.Camioneta;
 import Clases.Vehiculos.Vehiculo;
+import static tpo.TPO2.leer;
 
 public final class Viaje {
 
@@ -12,24 +11,17 @@ public final class Viaje {
     private int distancia;
     private Vehiculo vehiculo;
     private int cantPeajes;
-    private Auto auto;
-    private Vehiculo camion;
-    private Vehiculo camioneta;
     private boolean estanSobreMismaRuta;
-    private Combustible combustible;
+    private Combustible combustible; //Si bien el atributo combustible no es utilizado en la clase Viaje lo dejamos porque lo pide la consigna.
 
-    public Viaje(Ciudad ciudadOrigen, Ciudad ciudadDestino, Vehiculo vehiculo, Combustible combustible, int cantPeajes, boolean estanSobreMismaRuta) {
+    public Viaje(Ciudad ciudadOrigen, Ciudad ciudadDestino, Vehiculo vehiculo, Combustible combustible, int cantPeajes) {
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.vehiculo = vehiculo;
         this.cantPeajes = cantPeajes;
-        this.estanSobreMismaRuta = estanSobreMismaRuta;
+        estanSobreMismaRuta = ciudadOrigen.getSobreRuta().equalsIgnoreCase(ciudadDestino.getSobreRuta());
         this.combustible = combustible;
         distancia = (int) calcularDistancia();
-        auto = new Auto();
-        camion = new Camion();
-        camioneta = new Camioneta();
-
     }
 
     public Viaje() {
@@ -87,46 +79,32 @@ public final class Viaje {
 
     @Override
     public String toString() {
-        return "El Viaje{" + "ciudadOrigen=" + ciudadOrigen + ", ciudadDestino=" + ciudadDestino + ", distancia=" + distancia + ", vehiculo=" + vehiculo + ", cantPeajes=" + cantPeajes + ", estanSobreMismaRuta=" + estanSobreMismaRuta + '}';
+        return "El Viaje: " + "ciudadOrigen: " + ciudadOrigen + ", ciudadDestino: " + ciudadDestino + ", distancia: " + distancia + "km.\nVehiculo: " + vehiculo + " cantPeajes: " + cantPeajes + ", estanSobreMismaRuta: " + estanSobreMismaRuta + '.';
     }
 
     public double calcularDistancia() {
-        return Math.abs(ciudadOrigen.ubicacionEnKm - ciudadDestino.ubicacionEnKm);
+        if (estanSobreMismaRuta) {
+            return Math.abs(ciudadOrigen.ubicacionEnKm - ciudadDestino.ubicacionEnKm);
+        } else {
+            System.out.println("Las ciudades no se encuentran sobre la misma ruta, por favor ingrese la distancia a cubrir en el viaje");
+        }
+        double dist = leer.nextDouble();
+        return dist;
     }
 
-    public double calcularCostoPeaje() {
-        int costoPeaje = 0;
+    public int calcularCostoPeaje() {
         if (vehiculo instanceof Camion) {
-            for (int i = 1; i < cantPeajes; i++) {
-                costoPeaje = 150 * i;
-            }
-            return costoPeaje;
+            return cantPeajes * 150;
         } else {
-            for (int i = 1; i < cantPeajes; i++) {
-                costoPeaje = 100 * i;
-            }
-            return costoPeaje;
+            return cantPeajes * 100;
         }
     }
 
     public double calcularCostoCombustible() {
-        double resultado = 0;
-        if (vehiculo instanceof Auto) {
-            resultado = combustible.getPrecio() + auto.calcularCostoCombustible() * distancia;
-            return resultado;
-        }
-        if (vehiculo instanceof Camion) {
-            resultado = combustible.getPrecio() + camion.calcularCostoCombustible() * distancia;
-            return resultado;
-        }
-        if (vehiculo instanceof Camioneta) {
-            resultado = combustible.getPrecio() + camioneta.calcularCostoCombustible() * distancia;
-            return resultado;
-        }
-        return resultado;
+        return vehiculo.calcularCostoCombustible() * distancia;
     }
 
-    public double calcularCostoTotal() {
-        return calcularCostoCombustible() + calcularCostoPeaje();
+    public float calcularCostoTotal() {
+        return (float)calcularCostoCombustible() + calcularCostoPeaje();
     }
 }

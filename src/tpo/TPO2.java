@@ -37,27 +37,51 @@ La clase viaje poseerá al menos 2 constructores, y los siguientes métodos:
 • Cálculo del costo en peajes,
 • Calculo del costo en combustibles
 • Cálculo del costo total.  */
-package tpo.pkg2;
+package tpo;
 
 import Clases.Ciudad;
 import Clases.Combustible;
 import Clases.Vehiculos.Auto;
+import Clases.Vehiculos.Camion;
+import Clases.Vehiculos.Camioneta;
 import Clases.Viaje;
 import Clases.tipoCombustible;
+import java.util.Scanner;
 
 public class TPO2 {
 
+    public static Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
     public static void main(String[] args) {
 
-        System.out.println("Viaje desde Villa Mercedes hasta San Luis (Por misma ruta redondeando 100km total)");
+        System.out.println("Test 1: Viaje desde Villa Mercedes hasta San Luis en Auto(naftero), por la ruta 7, calculando 2 peajes.");
 
         Combustible com = new Combustible(tipoCombustible.NAFTA);
         Auto a = new Auto("Ford focus", "HIJ245", com);
-        Ciudad villa = new Ciudad(500, "siete", "Villa Mercedes");
-        Ciudad sanluis = new Ciudad(400, "siete", "San Luis");
-        Viaje trip = new Viaje(villa, sanluis, a, com, 3, true);
+        Ciudad villa = new Ciudad(696, "siete", "Villa Mercedes");
+        Ciudad sanluis = new Ciudad(788, "siete", "San Luis");
+        Viaje trip = new Viaje(villa, sanluis, a, com, 2);
         System.out.println(trip);
-        System.out.println("Costo total de viaje en auto, tipo de combustible nafta: $" + trip.calcularCostoTotal());
+        System.out.println("Costo total del viaje: $" + trip.calcularCostoTotal());
+
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Test 2: Viaje desde CABA hasta San Luis en Camioneta(Biodiesel), por misma ruta 7, calculando 4 peajes.");
+        Combustible com2 = new Combustible(tipoCombustible.BIODIESEL);
+        Camioneta c = new Camioneta("Chevrolet Chevy", "AB 265 PL", com2);
+        Ciudad BSAS = new Ciudad(0, "siete", "CABA");
+        Viaje trip2 = new Viaje(BSAS, sanluis, c, com2, 4);
+        System.out.println(trip2);
+        System.out.println("Costo total del viaje: $" + trip2.calcularCostoTotal());
+
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Test 3: Viaje desde Ushuaia hasta Neuquen en Camion(GNC), calculando 4 peajes.");
+        Combustible com3 = new Combustible(tipoCombustible.GNC);
+        Camion c2 = new Camion("Mercedes Benz", "SOP 235", com3);
+        Ciudad rioGallegos = new Ciudad(100, "tres", "Rio Gallegos");
+        Ciudad Neuquen = new Ciudad(600, "Doscientos Cincuenta", "Neuquen");
+        Viaje trip3 = new Viaje(rioGallegos, Neuquen, c2, com3, 6);
+        System.out.println(trip3);
+        System.out.println("Costo total del viaje: $" + trip3.calcularCostoTotal());
 
     }
 

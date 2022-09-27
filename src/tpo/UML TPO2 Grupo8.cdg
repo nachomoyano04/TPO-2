@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TPO-2">
+  <ClassDiagramComponents>
+    <Class name="Ciudad" package="Clases" visibility="public" xPosition="34.0" yPosition="414.0">
+      <Fields>
+        <Field name="ubicacionEnKm" type="int" visibility="public"/>
+        <Field name="sobreRuta" type="String" visibility="public"/>
+        <Field name="nombreCiudad" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="ubicacionEnKm"/>
+          <Argument type="String" name="sobreRuta"/>
+          <Argument type="String" name="nombreCiudad"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getUbicacionEnKm" returnType="int" visibility="public"/>
+        <Method name="setUbicacionEnKm" returnType="void" visibility="public">
+          <Argument type="int" name="ubicacionEnKm"/>
+        </Method>
+        <Method name="getSobreRuta" returnType="String" visibility="public"/>
+        <Method name="setSobreRuta" returnType="void" visibility="public">
+          <Argument type="String" name="sobreRuta"/>
+        </Method>
+        <Method name="getNombreCiudad" returnType="String" visibility="public"/>
+        <Method name="setNombreCiudad" returnType="void" visibility="public">
+          <Argument type="String" name="nombreCiudad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Combustible" package="Clases" visibility="public" xPosition="211.0" yPosition="49.0">
+      <Fields>
+        <Field name="tipo" type="tipoCombustible" visibility="package"/>
+        <Field name="precio" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="tipoCombustible" name="tipo"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="tipoCombustible" name="tipo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTipo" returnType="tipoCombustible" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="tipoCombustible" name="tipo"/>
+        </Method>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Auto" package="Clases.Vehiculos" visibility="public" xPosition="1171.0" yPosition="805.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Camion" package="Clases.Vehiculos" visibility="public" xPosition="1577.0" yPosition="805.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Camioneta" package="Clases.Vehiculos" visibility="public" xPosition="1716.0" yPosition="601.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="Clases.Vehiculos" visibility="public" isAbstract="true" xPosition="1257.0" yPosition="205.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="protected"/>
+        <Field name="combustible" type="Combustible" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Combustible" name="combustible"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getPatente" returnType="String" visibility="public"/>
+        <Method name="setPatente" returnType="void" visibility="public">
+          <Argument type="String" name="patente"/>
+        </Method>
+        <Method name="getCombustible" returnType="Combustible" visibility="public"/>
+        <Method name="setCombustible" returnType="void" visibility="public">
+          <Argument type="Combustible" name="combustible"/>
+        </Method>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Viaje" package="Clases" visibility="public" isFinal="true" xPosition="483.0" yPosition="414.0">
+      <Fields>
+        <Field name="ciudadOrigen" type="Ciudad" visibility="private"/>
+        <Field name="ciudadDestino" type="Ciudad" visibility="private"/>
+        <Field name="distancia" type="int" visibility="private"/>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+        <Field name="cantPeajes" type="int" visibility="private"/>
+        <Field name="estanSobreMismaRuta" type="boolean" visibility="private"/>
+        <Field name="combustible" type="Combustible" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Ciudad" name="ciudadOrigen"/>
+          <Argument type="Ciudad" name="ciudadDestino"/>
+          <Argument type="Vehiculo" name="vehiculo"/>
+          <Argument type="Combustible" name="combustible"/>
+          <Argument type="int" name="cantPeajes"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCiudadOrigen" returnType="Ciudad" visibility="public"/>
+        <Method name="setCiudadOrigen" returnType="void" visibility="public">
+          <Argument type="Ciudad" name="ciudadOrigen"/>
+        </Method>
+        <Method name="getCiudadDestino" returnType="Ciudad" visibility="public"/>
+        <Method name="setCiudadDestino" returnType="void" visibility="public">
+          <Argument type="Ciudad" name="ciudadDestino"/>
+        </Method>
+        <Method name="getDistancia" returnType="int" visibility="public"/>
+        <Method name="setDistancia" returnType="void" visibility="public">
+          <Argument type="int" name="distancia"/>
+        </Method>
+        <Method name="getVehiculo" returnType="Vehiculo" visibility="public"/>
+        <Method name="setVehiculo" returnType="void" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="getCantPeajes" returnType="int" visibility="public"/>
+        <Method name="setCantPeajes" returnType="void" visibility="public">
+          <Argument type="int" name="cantPeajes"/>
+        </Method>
+        <Method name="isEstanSobreMismaRuta" returnType="boolean" visibility="public"/>
+        <Method name="setEstanSobreMismaRuta" returnType="void" visibility="public">
+          <Argument type="boolean" name="estanSobreMismaRuta"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="calcularDistancia" returnType="double" visibility="public"/>
+        <Method name="calcularCostoPeaje" returnType="int" visibility="public"/>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public"/>
+        <Method name="calcularCostoTotal" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TPO2" package="tpo" visibility="public" xPosition="938.0" yPosition="49.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="tipoCombustible" package="Clases" visibility="public" xPosition="651.0" yPosition="49.0">
+      <Literals>
+        <Literal name="NAFTA"/>
+        <Literal name="GASOIL"/>
+        <Literal name="GNC"/>
+        <Literal name="DIESEL"/>
+        <Literal name="BIODIESEL"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="ciudadOrigen" source="Clases.Viaje" target="Clases.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tipo" source="Clases.Combustible" target="Clases.tipoCombustible" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Clases.Vehiculos.Vehiculo" target="Clases.Combustible" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Clases.Viaje" target="Clases.Ciudad" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Clases.Vehiculos.Camion" target="Clases.Vehiculos.Vehiculo"/>
+    <HasRelation name="combustible" source="Clases.Viaje" target="Clases.Combustible" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Clases.Vehiculos.Camioneta" target="Clases.Vehiculos.Vehiculo"/>
+    <UseRelation source="Clases.Viaje" target="Clases.Vehiculos.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="es" source="Clases.Vehiculos.Auto" target="Clases.Vehiculos.Vehiculo"/>
+    <HasRelation name="combustible" source="Clases.Vehiculos.Vehiculo" target="Clases.Combustible" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ciudadDestino" source="Clases.Viaje" target="Clases.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene un" source="Clases.Viaje" target="Clases.Vehiculos.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Clases.Combustible" target="Clases.tipoCombustible" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
