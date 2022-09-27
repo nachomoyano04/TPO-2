@@ -5,7 +5,7 @@ import Clases.Vehiculos.Camion;
 import Clases.Vehiculos.Camioneta;
 import Clases.Vehiculos.Vehiculo;
 
-public class Viaje {
+public final class Viaje {
     public Ciudad ciudadOrigen;
     public Ciudad ciudadDestino;
     public int distancia;

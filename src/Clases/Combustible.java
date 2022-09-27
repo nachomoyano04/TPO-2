@@ -1,16 +1,15 @@
 package Clases;
 
 public class Combustible {
- 
+
     tipoCombustible tipo;
-    double precio; 
+    double precio;
 
     public Combustible(tipoCombustible tipo, double precio) {
         this.tipo = tipo;
         this.precio = precio;
     }
-    
-    
+
     @Override
     public String toString() {
         return "Combustible{" + "tipo=" + tipo + ", precio=" + precio + '}';
@@ -34,16 +33,21 @@ public class Combustible {
 
     public Combustible(tipoCombustible tipo) {
         this.tipo = tipo;
-        switch(tipo){
-            case DIESEL: precio = 165;
-            case GASOIL: precio=135;
-            case GNC: precio=71;
-            case NAFTA: precio=130;
-            case BIODIESEL: precio=180;
+        switch (tipo) {
+            case DIESEL:
+                precio = 165;break;
+            case GASOIL:
+                precio = 135;break;
+            case GNC:
+                precio = 71;break;
+            case NAFTA:
+                precio = 130;break;
+            case BIODIESEL:
+                precio = 180;break;
         }
     }
 
     public Combustible() {
     }
-    
+
 }

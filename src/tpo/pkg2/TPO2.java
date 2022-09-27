@@ -37,8 +37,6 @@ La clase viaje poseerá al menos 2 constructores, y los siguientes métodos:
 • Cálculo del costo en peajes,
 • Calculo del costo en combustibles
 • Cálculo del costo total.  */
-
-
 package tpo.pkg2;
 
 import Clases.Ciudad;
@@ -47,18 +45,20 @@ import Clases.Vehiculos.Auto;
 import Clases.Viaje;
 import Clases.tipoCombustible;
 
-
 public class TPO2 {
 
-
     public static void main(String[] args) {
-      Combustible com = new Combustible(tipoCombustible.NAFTA);
-      Auto a = new Auto();
-      Ciudad villa = new Ciudad(500, "siete", "Villa Mercedes");
-      Ciudad sanluis = new Ciudad(400, "siete", "San Luis");
-      Viaje trip = new Viaje(villa,sanluis, a, com, 123, true);
-      System.out.print(trip.calcularCostoTotal());
-      
+        
+        System.out.println("Viaje desde Villa Mercedes hasta San Luis (Por misma ruta redondeando 100km total)");
+        
+        Combustible com = new Combustible(tipoCombustible.NAFTA);
+        Auto a = new Auto("Ford focus","HIJ245",com);
+        Ciudad villa = new Ciudad(500, "siete", "Villa Mercedes");
+        Ciudad sanluis = new Ciudad(400, "siete", "San Luis");
+        Viaje trip = new Viaje(villa, sanluis, a, com, 3, true);
+        System.out.println(trip);
+        System.out.println("Costo total de viaje en auto, tipo de combustible nafta: $"+trip.calcularCostoTotal());
+
     }
-    
+
 }

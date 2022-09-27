@@ -2,6 +2,6 @@ package Clases;
 
 public enum tipoCombustible {
 
-NAFTA,GASOIL,GNC,DIESEL,BIODIESEL;
+    NAFTA, GASOIL, GNC, DIESEL, BIODIESEL;
 
 }

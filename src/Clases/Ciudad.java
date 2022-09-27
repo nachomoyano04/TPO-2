@@ -1,6 +1,7 @@
 package Clases;
 
 public class Ciudad {
+
     public int ubicacionEnKm;
     public String sobreRuta;
     public String nombreCiudad;
@@ -42,6 +43,5 @@ public class Ciudad {
     public String toString() {
         return "Ciudad{" + "ubicacionEnKm=" + ubicacionEnKm + ", sobreRuta=" + sobreRuta + ", nombreCiudad=" + nombreCiudad + '}';
     }
-    
-    
+
 }
